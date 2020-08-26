@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+</head>
+<body>
+    {% if message == "ok" %}
+        <p>Запись занесена успешно</p>
+    {% endif %}
+    {% if message == "out" %}
+        <p>Вы не автоизованы, нажмите кнопку come чтобы зайти</p>
+    {% endif %}
+    {% if message == "come" %}
+        <p>Для начала надо выйти, нажмите кнопку out</p>
+    {% endif %} 
+    {% if message == "reg" %}
+        <p>Пользователь успешно зарегестрирован</p>
+    {% endif %} 
+    <p><a class="btn" href="/register/{{ username }}">create user</a></p>
+    <p>
+        <a class="btn btn-primary" href="/come/{{ username }}/admin" role = "button">come</a>
+        <a class="btn btn-outline-success" href="/out/{{ username }}/admin">out</a>
+    </p>
+    <p><a class="btn" href="/download/none">скачать отчеты</a></p>
+</body>
+</html>

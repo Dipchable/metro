@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+    {% if message == "ok" %}
+        <p>Запись занесена успешно</p>
+    {% endif %}
+    {% if message == "out" %}
+        <p>Вы не автоизованы, нажмите кнопку come чтобы зайти</p>
+    {% endif %}
+    {% if message == "come" %}
+        <p>Для начала надо выйти, нажмите кнопку out</p>
+    {% endif %}    
+    <a class="btn btn-primary" href="/come/{{ username }}/user" role = "button">come</a>
+    <a class="btn btn-outline-success" href="/out/{{ username }}/user">out</a>
+</body>
+</html>
